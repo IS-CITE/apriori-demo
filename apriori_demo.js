@@ -5,5 +5,8 @@ let transactions = {
 	'004': ['เบียร์', 'ไข่']
 };
 let items = [];
-for(let t in transactions) {
+for(let id in transactions) {
+	for(let item of transactions[id]) {
+		if(!items.includes(item)) items.push(item);
+	}
 }
