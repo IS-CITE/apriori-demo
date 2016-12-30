@@ -8,9 +8,7 @@ const support = 0.5;
 
 const support_count = support * transaction.length;
 const match = (a, b)=>{
-	for(let i of b) {
-		if(!a.includes(i)) return false;
-	}
+	for(let i of b) if(!a.includes(i)) return false;
 	return true;
 };
 const filter_supported = (c_itemset)=>{
