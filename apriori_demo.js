@@ -16,9 +16,7 @@ const match = (a, b)=>{
 const filter_supported = (c_itemset)=>{
 	return c_itemset.filter((e)=>{
 		let count = 0;
-		for(let t of transaction) {
-			if(match(t, e.item)) e.count++;
-		}
+		for(let t of transaction) if(match(t, e.item)) e.count++;
 		return e.count >= support_count;
 	});
 };
@@ -26,7 +24,6 @@ let c_itemset = [];
 let f_itemset = [];
 let item = [];
 let size = 1;
-
 for(let t of transaction) {
 	for(let i of t) {
 		if(!item.includes(i)) {
@@ -57,9 +54,7 @@ while(f_itemset[size].length > 1) {
 					c_itemset.push({item: tmp, count: 0});
 				})();
 			}
-			else {
-				break;
-			}
+			else break;
 		}
 	}
 	f_itemset[++size] = filter_supported(c_itemset);
