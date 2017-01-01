@@ -63,4 +63,6 @@ const transaction = [
 	['เบียร์', 'ไข่']
 ];
 let large_itemset = apriori(transaction, 0.5);
-console.log(JSON.stringify(large_itemset));
+for(let i of large_itemset) {
+  console.log(i);
+}
