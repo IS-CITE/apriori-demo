@@ -64,5 +64,5 @@ const transaction = [
 ];
 let large_itemset = apriori(transaction, 0.5);
 for(let i of large_itemset) {
-  console.log(i);
+  console.log(JSON.stringify(i));
 }
