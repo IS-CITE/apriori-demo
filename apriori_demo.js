@@ -27,7 +27,7 @@ function apriori(transaction, support) {
 	f_itemset = filter_supported(c_itemset);
 	while(f_itemset.length > 0) {
 		size++;
-		large_itemset.push({k: size, itemset: f_itemset});
+		large_itemset.push({k: size, candidate: c_itemset, itemset: f_itemset});
 		c_itemset = [];
 		for(let i = 0, s = size - 1; i < f_itemset.length; i++) {
 			let a = f_itemset[i].item;
